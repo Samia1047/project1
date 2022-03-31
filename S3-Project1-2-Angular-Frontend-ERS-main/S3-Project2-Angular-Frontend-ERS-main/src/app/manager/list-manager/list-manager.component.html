@@ -1,0 +1,41 @@
+
+<div class="container">
+    <h3 style="color:brown">MANAGER INFORMATION</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Password</th>
+                <th>FirstName</th>
+                <th>LasttName</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let manager of allManagers">
+                <td>{{ manager.managerId }}</td>
+                <td><img [src]="manager.managerImageUrl" width="80px" height="50px"/></td>
+                <td>{{ manager.managerPassword }}</td>
+                <td>{{ manager.managerFirstName }}</td>
+                <td>{{ manager.managerLastName }}</td>
+                <td>{{ manager.managerContact }}</td>
+                <td>{{ manager.managerImageUrl }}</td>
+
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="goToEditManager(manager.managerId)">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteManager(manager.managerId)"><i
+                            class="material-icons">delete</i></button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
